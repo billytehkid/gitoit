@@ -3,13 +3,13 @@
 Let's see how this pans out...
 
 ## Concepts
-Binder -> Git repository
-Lists  -> Git branches
-List   -> list.json
+Binder -> Git repository  
+Lists  -> Git branches  
+List   -> list.json  
 
 ## Implementation
 ### Clients
-clients/*
+clients/*  
 These are the various clients written in different languages.  
 They should all behave more or less the same.
 
