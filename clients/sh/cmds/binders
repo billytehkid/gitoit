@@ -1,0 +1,42 @@
+#!/bin/sh
+DIR=~/.gitoit
+
+usage="\
+Usage: $(basename $0) [-d <dir>] {create|connect|delete|list} BINDER
+Command used to manipulate binders
+
+Commands:
+    create      Start a new binder
+    connect     Connect to an existing binder
+    delete      Delete a binder
+    list        List binders
+
+Arguments:
+    BINDER      When creating, it is the simple string to use for the name
+                When connecting, path to the remote binder ([file|ssh|git|http]://...)
+                When deleting, the name of the binder to delete
+                When listing, not used or required
+
+Options:
+    -d      directory to store binders [default: $DIR]
+"
+
+while getopts "hd:" opt; do
+    case ${opt} in
+        d) DIR=${OPTARG} ;;
+        h) echo "${usage}"; exit 0 ;;
+        ?) echo "\n${usage}"; exit 1 ;;
+    esac
+done
+
+shift $((OPTIND - 1))
+
+case $1 in
+    create);;
+    connect);;
+    delete);;
+    list);;
+    *) echo "${usage}" ;;
+esac
+
+# vim: et sw=4 ts=4
